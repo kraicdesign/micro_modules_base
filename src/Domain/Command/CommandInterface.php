@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Application\Command;
+namespace MicroModule\Base\Domain\Command;
 
 use Ramsey\Uuid\UuidInterface;
 

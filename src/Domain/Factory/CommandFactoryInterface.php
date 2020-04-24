@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Application\Factory;
+namespace MicroModule\Base\Domain\Factory;
 
-use MicroModule\Base\Application\Command\CommandInterface;
+use MicroModule\Base\Domain\Command\CommandInterface;
 
 /**
  * Interface CommandFactoryInterface.

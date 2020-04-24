@@ -1,0 +1,43 @@
+{
+    "name": "micro-module/base",
+    "type": "library",
+    "description": "Micro module Base common library",
+    "license": "proprietary",
+    "require": {
+        "php": "^7.3",
+        "ext-json": "*",
+        "beberlei/assert": "^3.2",
+        "psr/log": "^1.1",
+        "ramsey/uuid": "^3.8 || ^4.0",
+        "monolog/monolog": "~1.22 || ~2.0"
+    },
+    "require-dev": {
+        "php-parallel-lint/php-console-highlighter": "^0.4",
+        "php-parallel-lint/php-parallel-lint": "^1.0",
+        "mockery/mockery": "^1.3",
+        "phpmd/phpmd": "^2.8",
+        "phpstan/phpstan": "^0.12",
+        "phpstan/phpstan-mockery": "^0.12",
+        "phpstan/phpstan-phpunit": "^0.12",
+        "phpunit/phpunit": "^9.0",
+        "roave/security-advisories": "dev-master",
+        "symplify/easy-coding-standard": "^7.2",
+        "vimeo/psalm": "3.5.0"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "MicroModule\\Base\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MicroModule\\Base\\Tests\\Unit\\": "tests/unit"
+        }
+    }
+}

@@ -4,7 +4,7 @@
     "description": "Micro module Base common library",
     "license": "proprietary",
     "require": {
-        "php": "^7.3",
+        "php": "^7.3 || ^8.0",
         "ext-json": "*",
         "beberlei/assert": "^3.2",
         "psr/log": "^1.1",
@@ -19,10 +19,10 @@
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-mockery": "^0.12",
         "phpstan/phpstan-phpunit": "^0.12",
-        "phpunit/phpunit": "^9.0",
+        "phpunit/phpunit": "^9.4",
         "roave/security-advisories": "dev-master",
         "symplify/easy-coding-standard": "^7.2",
-        "vimeo/psalm": "3.5.0"
+        "vimeo/psalm": "^4.2"
     },
     "config": {
         "preferred-install": {

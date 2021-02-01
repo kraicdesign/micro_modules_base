@@ -20,8 +20,6 @@ interface ParentExceptionInterface
 
     /**
      * Return parent exception.
-     *
-     * @return Throwable
      */
     public function getParentException(): Throwable;
 
@@ -29,7 +27,6 @@ interface ParentExceptionInterface
      * Return context exception array from parent exception object.
      *
      * @param mixed[] $context
-     * @param string  $contextSerializeType
      *
      * @return mixed[]
      */

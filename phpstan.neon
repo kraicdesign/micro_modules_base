@@ -3,5 +3,5 @@ includes:
 
 parameters:
 	excludes_analyse:
-	    - src/Infrastructure/Testing/RedisInMemory.php
-	    - src/Infrastructure/Testing/RedisFactory.php
+	    - tests/unit/Infrastructure/Repository/RedisInMemory.php
+	    - tests/unit/Infrastructure/Factory/RedisFactory.php

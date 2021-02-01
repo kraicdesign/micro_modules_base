@@ -13,15 +13,11 @@ interface NormalizableServiceInterface
      * Denormalize array to object.
      *
      * @param mixed[] $data
-     *
-     * @return object
      */
     public function denormalize(array $data): object;
 
     /**
      * Nermolize object to array.
-     *
-     * @param object $object
      *
      * @return mixed[]
      */

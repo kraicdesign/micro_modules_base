@@ -40,8 +40,6 @@ trait LoggerTrait
     /**
      * ExceptionListener constructor.
      *
-     * @param LoggerInterface $logger
-     *
      * @return $this
      *
      * @required
@@ -56,8 +54,6 @@ trait LoggerTrait
     /**
      * Log an regular message or warning.
      *
-     * @param string  $message
-     * @param int     $level
      * @param mixed[] $context
      *
      * @return $this
@@ -91,7 +87,6 @@ trait LoggerTrait
 
             default:
                 throw new LoggerException(sprintf("Try to log invalid message level type '%s'", $level));
-
                 break;
         }
 
@@ -102,7 +97,6 @@ trait LoggerTrait
      * Log an exception.
      *
      * @param Throwable $exception The \Throwable instance
-     * @param int       $level
      * @param string    $message   The error message to log
      *
      * @return $this
@@ -140,7 +134,6 @@ trait LoggerTrait
 
             default:
                 throw new LoggerException(sprintf("Try to log invalid error level type '%s'", $level));
-
                 break;
         }
 
@@ -149,10 +142,6 @@ trait LoggerTrait
 
     /**
      * Define exception level from exception type.
-     *
-     * @param Throwable $exception
-     *
-     * @return int
      */
     public function getExceptionLevel(Throwable $exception): int
     {
@@ -175,10 +164,6 @@ trait LoggerTrait
 
     /**
      * Generate exception message.
-     *
-     * @param Throwable $exception
-     *
-     * @return string
      */
     public function getExceptionMessage(Throwable $exception): string
     {

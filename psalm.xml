@@ -9,8 +9,8 @@
         <directory name="src" />
         <ignoreFiles>
             <directory name="vendor" />
-            <file name="src/Infrastructure/Testing/RedisFactory.php" />
-            <file name="src/Infrastructure/Testing/RedisInMemory.php" />
+            <file name="tests/unit/Infrastructure/Factory/RedisFactory.php" />
+            <file name="tests/unit/Infrastructure/Repository/RedisInMemory.php" />
         </ignoreFiles>
     </projectFiles>
 
@@ -34,7 +34,6 @@
         <MissingReturnType errorLevel="info" />
         <MissingPropertyType errorLevel="info" />
         <InvalidDocblock errorLevel="info" />
-        <MisplacedRequiredParam errorLevel="info" />
 
         <PropertyNotSetInConstructor errorLevel="info" />
         <MissingConstructor errorLevel="info" />

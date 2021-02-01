@@ -20,8 +20,6 @@ trait ParentExceptionTrait
 
     /**
      * Return parent exception.
-     *
-     * @return Throwable
      */
     public function getParentException(): Throwable
     {
@@ -32,7 +30,6 @@ trait ParentExceptionTrait
      * Return context exception array from parent exception object.
      *
      * @param mixed[] $context
-     * @param string  $contextSerializeType
      *
      * @return mixed[]
      */
@@ -54,7 +51,6 @@ trait ParentExceptionTrait
      * Serialize if needed context array to string.
      *
      * @param mixed[] $context
-     * @param string  $contextSerializeType
      *
      * @return mixed
      */

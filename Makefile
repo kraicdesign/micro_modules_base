@@ -38,18 +38,16 @@ composer: ## Execute composer command
 phpunit: ## execute project unit tests
 	docker-compose run --rm --no-deps php sh -lc  "./vendor/bin/phpunit $(conf)"
 
-.PHONY: style
-style: ## executes php analizers
+.PHONY: phpstan
+phpstan: ## executes phpstan analizer
 	docker-compose run --rm --no-deps php sh -lc './vendor/bin/phpstan analyse -l 6 -c phpstan.neon src tests'
+
+psalm: ## execute psalm analizer
 	docker-compose run --rm --no-deps php sh -lc './vendor/bin/psalm --config=psalm.xml'
 
 .PHONY: lint
 lint: ## checks syntax of PHP files
 	docker-compose run --rm --no-deps php sh -lc './vendor/bin/parallel-lint ./ --exclude vendor --exclude bin/.phpunit'
-
-.PHONY: layer
-layer: ## Check issues with layers (deptrac tool)
-	docker-compose run --rm --no-deps php sh -lc './vendor/bin/deptrac analyze --formatter-graphviz=0'
 
 .PHONY: logs
 logs: ## look for service logs
@@ -66,7 +64,7 @@ php-shell: ## PHP shell
 unit-tests: ## Run unit-tests suite
 	docker-compose run --rm php sh -lc 'vendor/bin/phpunit --testsuite unit-tests'
 
-static-analysis: style layer coding-standards ## Run phpstan, easycoding standarts code static analysis
+static-analysis: psalm phpstan coding-standards ## Run phpstan, psalm, easycoding standarts code static analysis
 
 coding-standards: ## Run check and validate code standards tests
 	docker-compose run --rm --no-deps php sh -lc 'vendor/bin/ecs check src tests'
@@ -78,5 +76,5 @@ coding-standards-fixer: ## Run code standards fixer
 security-tests: ## The SensioLabs Security Checker
 	docker-compose run --rm --no-deps php sh -lc 'vendor/bin/security-checker security:check --end-point=http://security.sensiolabs.org/check_lock'
 
-.PHONY: test lint static-analysis phpunit coding-standards composer-validate
-test: build lint static-analysis phpunit coding-standards composer-validate stop ## Run all test suites
+.PHONY: test lint static-analysis coding-standards composer-validate phpunit
+test: build lint static-analysis coding-standards composer-validate phpunit stop ## Run all test suites

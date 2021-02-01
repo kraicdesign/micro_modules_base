@@ -16,9 +16,7 @@ interface CommandFactoryInterface
     /**
      * Make CommandBus command instance by constant type.
      *
-     * @param mixed... $args
-     *
-     * @return CommandInterface
+     * @param mixed ...$args
      */
     public function makeCommandInstanceByType(...$args): CommandInterface;
 }

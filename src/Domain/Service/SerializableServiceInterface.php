@@ -21,8 +21,6 @@ interface SerializableServiceInterface
     /**
      * Serialize object to array.
      *
-     * @param object $object
-     *
      * @return mixed
      */
     public function serialize(object $object);

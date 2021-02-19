@@ -11,7 +11,9 @@ use Exception;
  *
  * @category Exception
  */
-class CriticalException extends Exception
+class CriticalException extends Exception implements ExceptionLevelsInterface, ParentExceptionInterface
 {
-    use ParentExceptionTrait;
+    protected string $level = self::EXCEPTION_LEVEL_CRITICAL;
+
+    use ParentExceptionTrait, ExceptionLevelsTrait;
 }

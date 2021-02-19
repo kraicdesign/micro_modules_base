@@ -9,6 +9,6 @@ namespace MicroModule\Base\Domain\Exception;
  *
  * @category Domain\Exception
  */
-final class LoggerException extends ErrorException
+class LoggerException extends ErrorException
 {
 }

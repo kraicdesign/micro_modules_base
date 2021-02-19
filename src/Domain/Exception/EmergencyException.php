@@ -11,7 +11,9 @@ use Exception;
  *
  * @category Exception
  */
-class EmergencyException extends Exception
+class EmergencyException extends Exception implements ExceptionLevelsInterface, ParentExceptionInterface
 {
-    use ParentExceptionTrait;
+    protected string $level = self::EXCEPTION_LEVEL_EMERGENCY;
+
+    use ParentExceptionTrait, ExceptionLevelsTrait;
 }

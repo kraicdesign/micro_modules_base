@@ -9,6 +9,6 @@ namespace MicroModule\Base\Domain\Exception;
  *
  * @category Domain\Exception
  */
-final class InvalidResponseContentTypeException extends CriticalException
+class InvalidResponseContentTypeException extends CriticalException
 {
 }

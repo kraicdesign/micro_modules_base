@@ -9,6 +9,6 @@ namespace MicroModule\Base\Domain\Exception;
  *
  * @category Domain\Exception
  */
-final class InvalidDataException extends ErrorException
+class InvalidDataException extends ErrorException
 {
 }

@@ -11,7 +11,7 @@ use Exception;
  *
  * @category Exception
  */
-class ErrorException extends Exception
+class ErrorException extends Exception implements ExceptionLevelsInterface, ParentExceptionInterface
 {
-    use ParentExceptionTrait;
+    use ParentExceptionTrait, ExceptionLevelsTrait;
 }

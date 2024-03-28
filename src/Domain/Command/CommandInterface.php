@@ -16,5 +16,5 @@ interface CommandInterface
     /**
      * Return Uuid.
      */
-    public function getUuid(): UuidInterface;
+    public function getUuid(): ?UuidInterface;
 }

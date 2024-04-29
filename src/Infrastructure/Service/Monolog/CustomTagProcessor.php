@@ -10,63 +10,62 @@ use MicroModule\Base\Domain\Exception\CriticalException;
 use MicroModule\Base\Domain\Exception\EmergencyException;
 use Monolog\Processor\ProcessorInterface;
 use RuntimeException;
+use Symfony\Component\ErrorHandler\Exception\SilencedErrorContext;
 use Throwable;
 use TypeError;
 
-/**
- * Class CustomTagProcessor.
- *
- * @category AdgoalCommon\Datagate\Infrastructure\Service\Monolog
- */
 class CustomTagProcessor implements ProcessorInterface
 {
-    protected const EXCEPTION_NAME_ALERT = 'Alert';
-    protected const EXCEPTION_NAME_CRITICAL = 'Critical';
-    protected const EXCEPTION_NAME_EMERGENCY = 'Emergency';
-    protected const EXCEPTION_NAME_RUNTIME = 'Runtime';
-    protected const EXCEPTION_NAME_DEFAULT = 'Exception';
-    protected const ERROR_BASE_NAME = 'Error';
-    protected const ERROR_NAME_TYPE = 'TypeError';
+    protected const EXCEPTION_NAME_ALERT = "Alert";
+
+    protected const EXCEPTION_NAME_CRITICAL = "Critical";
+
+    protected const EXCEPTION_NAME_EMERGENCY = "Emergency";
+
+    protected const EXCEPTION_NAME_RUNTIME = "Runtime";
+
+    protected const EXCEPTION_NAME_DEFAULT = "Exception";
+
+    protected const ERROR_BASE_NAME = "Error";
+
+    protected const ERROR_NAME_TYPE = "TypeError";
 
     /**
-     * Application environment prod|test|stage|prod.
+     * Application environment prod|test|stage|prod
      */
     protected string $environment;
 
     /**
-     * Application release tag.
+     * Application release tag
      */
     protected string $release;
 
     /**
-     * Logging tags.
-     *
-     * @var array<string, mixed>
+     * Logging tags
      */
     protected array $tags;
 
     /**
-     * Global logging tags from application and environment.
-     *
-     * @var array<string, mixed>
+     * Global logging tags from application and environment
      */
     protected array $globalTags;
 
     /**
-     * Additional tags.
+     * Additional tags
      *
-     * @var array<string, mixed>
+     * @var string[]
      */
     protected array $additionalTags;
 
     /**
-     * CustomTagProcessor constructor.
-     *
-     * @param mixed[]  $globalTags
      * @param string[] $additionalTags
      */
-    public function __construct(string $environment, string $release, array $globalTags = [], array $additionalTags = [])
-    {
+    public function __construct(
+        string $environment,
+        string $release,
+        array $globalTags = [],
+        array $additionalTags = []
+    ) {
         $this->environment = $environment;
         $this->release = $release;
         $this->globalTags = $globalTags;
@@ -74,50 +73,25 @@ class CustomTagProcessor implements ProcessorInterface
     }
 
     /**
-     * Add custom tags to log tags. Method called by Monolog.
-     *
-     * @param mixed[] $record
-     *
-     * @return mixed[]
+     * Add custom tags to log tags. Method called by Monolog
      */
     public function __invoke(array $record): array
     {
-        $this->addAdditonalTags($record);
+        $this->addAdditionalTags($record);
         $this->addGlobalTags($record);
-        $record['extra']['tags'] = $this->tags;
-        $record['extra']['release'] = $this->release;
-        $record['extra']['environment'] = $this->environment;
+        $record["extra"]["tags"] = $this->tags;
+        $record["extra"]["release"] = $this->release;
+        $record["extra"]["environment"] = $this->environment;
 
         return $record;
     }
 
     /**
-     * Add global tags, such exception level, version of php, application name etc.
-     *
-     * @param mixed[] $record
+     * Add logging additional tags
      */
-    protected function addGlobalTags(array $record): void
+    protected function addAdditionalTags(array $record): void
     {
-        $context = $record['context'];
-
-        if (isset($context['exception'])) {
-            $this->addTag('exception_type', $this->resolveExceptionLevelType($context['exception']));
-        }
-        $this->addTag('php_version', (string) phpversion());
-
-        foreach ($this->globalTags as $k => $v) {
-            $this->addTag($k, $v);
-        }
-    }
-
-    /**
-     * Add logging additional tags.
-     *
-     * @param mixed[] $record
-     */
-    protected function addAdditonalTags(array $record): void
-    {
-        $context = $record['context'];
+        $context = $record["context"];
 
         foreach ($this->additionalTags as $key) {
             if (isset($context[$key])) {
@@ -134,37 +108,42 @@ class CustomTagProcessor implements ProcessorInterface
     protected function addTag(string $key, $value): void
     {
         if (is_object($value)) {
-            $value = method_exists($value, 'normalize') ? json_encode($value->normalize()) : var_export($value, true);
+            $value = method_exists($value, "normalize")
+                ? json_encode($value->normalize()) : var_export($value, true);
         }
         $this->tags[$key] = $value;
     }
 
     /**
+     * Add global tags, such exception level, version of php, application name etc.
+     */
+    protected function addGlobalTags(array $record): void
+    {
+        $context = $record["context"];
+        if (isset($context["exception"])) {
+            $this->addTag("exception_type", $this->resolveExceptionLevelType($context["exception"]));
+        }
+
+        $this->addTag("php_version", (string) PHP_VERSION);
+
+        foreach ($this->globalTags as $k => $v) {
+            $this->addTag($k, $v);
+        }
+    }
+
+    /**
      * Resolve exception level type based on exception.
      */
-    protected function resolveExceptionLevelType(Throwable $e): string
+    protected function resolveExceptionLevelType(SilencedErrorContext|Throwable $e): string
     {
-        switch (true) {
-            case $e instanceof AlertException:
-                return self::EXCEPTION_NAME_ALERT;
-
-            case $e instanceof CriticalException:
-                return self::EXCEPTION_NAME_CRITICAL;
-
-            case $e instanceof EmergencyException:
-                return self::EXCEPTION_NAME_EMERGENCY;
-
-            case $e instanceof RunTimeException:
-                return self::EXCEPTION_NAME_RUNTIME;
-
-            case $e instanceof TypeError:
-                return self::ERROR_NAME_TYPE;
-
-            case $e instanceof Error:
-                return self::ERROR_BASE_NAME;
-
-            default:
-                return self::EXCEPTION_NAME_DEFAULT;
-        }
+        return match (true) {
+            $e instanceof AlertException => self::EXCEPTION_NAME_ALERT,
+            $e instanceof CriticalException => self::EXCEPTION_NAME_CRITICAL,
+            $e instanceof EmergencyException => self::EXCEPTION_NAME_EMERGENCY,
+            $e instanceof RunTimeException => self::EXCEPTION_NAME_RUNTIME,
+            $e instanceof TypeError => self::ERROR_NAME_TYPE,
+            $e instanceof Error => self::ERROR_BASE_NAME,
+            default => self::EXCEPTION_NAME_DEFAULT,
+        };
     }
 }

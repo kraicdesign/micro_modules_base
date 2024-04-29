@@ -13,10 +13,10 @@ use Throwable;
  */
 interface ParentExceptionInterface
 {
-    public const CONTEXT_SELIALIZE_NONE = 'none';
-    public const CONTEXT_SELIALIZE_BASIC = 'serialize';
-    public const CONTEXT_SELIALIZE_JSON = 'json';
-    public const CONTEXT_SELIALIZE_PRINTR = 'printr';
+    public const CONTEXT_SELIALIZE_NONE = "none";
+    public const CONTEXT_SELIALIZE_BASIC = "serialize";
+    public const CONTEXT_SELIALIZE_JSON = "json";
+    public const CONTEXT_SELIALIZE_PRINTR = "printr";
 
     /**
      * Return parent exception.

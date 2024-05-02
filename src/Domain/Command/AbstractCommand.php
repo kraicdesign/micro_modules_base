@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace MicroModule\Base\Domain\Command;
 
+use MicroModule\Base\Domain\ValueObject\Payload;
 use MicroModule\Base\Domain\ValueObject\ProcessUuid;
 use Ramsey\Uuid\UuidInterface;
 
@@ -14,7 +15,8 @@ abstract class AbstractCommand implements CommandInterface
 {
     public function __construct(
         protected ?ProcessUuid $processUuid,
-        protected ?UuidInterface $uuid
+        protected ?UuidInterface $uuid,
+        protected ?Payload $payload
     ) {
     }
 
@@ -23,11 +25,13 @@ abstract class AbstractCommand implements CommandInterface
         return $this->processUuid;
     }
 
-    /**
-     * Return Uuid value object.
-     */
     public function getUuid(): ?UuidInterface
     {
         return $this->uuid;
+    }
+
+    public function getPayload(): ?Payload
+    {
+        return $this->payload;
     }
 }

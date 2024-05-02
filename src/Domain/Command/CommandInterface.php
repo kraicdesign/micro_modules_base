@@ -4,17 +4,24 @@ declare(strict_types=1);
 
 namespace MicroModule\Base\Domain\Command;
 
+use MicroModule\Base\Domain\ValueObject\Payload;
 use MicroModule\Base\Domain\ValueObject\ProcessUuid;
 use Ramsey\Uuid\UuidInterface;
 
 interface CommandInterface
 {
     /**
-     * Get Process Uuid
+     * Return ProcessUuid value object.
      */
     public function getProcessUuid(): ?ProcessUuid;
+
     /**
-     * Return Uuid.
+     * Return Uuid value object.
      */
     public function getUuid(): ?UuidInterface;
+
+    /**
+     * Return Payload value object.
+     */
+    public function getPayload(): ?Payload;
 }

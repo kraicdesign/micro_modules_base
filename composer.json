@@ -1,44 +1,67 @@
 {
-    "name": "micro-module/base",
+    "name": "ddd-module/base",
     "type": "library",
     "description": "Micro module Base common library",
     "license": "proprietary",
     "require": {
-        "php": "^8.0",
-        "ext-json": "*",
+        "php": "^8.2",
         "ext-intl": "*",
+        "ext-json": "*",
         "beberlei/assert": "^3.3",
-        "psr/log": "^1.1",
+        "psr/log": "^1.1 || ^2.0 || ^3.0",
         "ramsey/uuid": "^3.8 || ^4.0",
         "monolog/monolog": "~1.22 || ~2.0"
     },
+    "suggest": {
+        "broadway/broadway": "^2.5",
+        "ddd-module/value-object": "^1.0",
+        "doctrine/dbal": "^4.2",
+        "enqueue/enqueue": "^0.10.24",
+        "league/tactician": "^1.1",
+        "nyholm/psr7": "^1.8",
+        "opentracing/opentracing": "^1.0",
+        "spiral/roadrunner": "^2024.3",
+        "spiral/roadrunner-http": "^3.5",
+        "spiral/roadrunner-worker": "^3.6",
+        "spiral/tokenizer": "^3.14",
+        "symfony/event-dispatcher": "*",
+        "symfony/http-foundation": "^7.2",
+        "symfony/http-kernel": "^7.2",
+        "temporal/sdk": "^2.12",
+        "yoanm/jsonrpc-params-symfony-validator-sdk": "^2.1",
+        "yoanm/jsonrpc-server-doc-sdk": "^1.0",
+        "yoanm/jsonrpc-server-sdk": "^3.3"
+    },
     "require-dev": {
+        "mockery/mockery": "^1.4",
         "php-parallel-lint/php-console-highlighter": "^0.5",
         "php-parallel-lint/php-parallel-lint": "^1.2",
-        "mockery/mockery": "^1.4",
         "phpmd/phpmd": "^2.9",
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-mockery": "^0.12",
         "phpstan/phpstan-phpunit": "^0.12",
-        "phpunit/phpunit": "^9.3",
+        "phpunit/phpunit": "^10.0",
         "roave/security-advisories": "dev-master",
         "symplify/easy-coding-standard": "^9.0",
-        "vimeo/psalm": "^4.4"
+        "vimeo/psalm": "^5.0"
     },
     "config": {
         "preferred-install": {
             "*": "dist"
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": false
+        }
     },
     "autoload": {
         "psr-4": {
-            "MicroModule\\Base\\": "src"
+            "DddModule\\Base\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "MicroModule\\Base\\Tests\\Unit\\": "tests/unit"
+            "DddModule\\Base\\Tests\\Unit\\": "tests/unit"
         }
     }
 }

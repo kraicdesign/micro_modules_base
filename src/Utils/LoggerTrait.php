@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Utils;
+namespace DddModule\Base\Utils;
 
-use MicroModule\Base\Domain\Exception\AlertException;
-use MicroModule\Base\Domain\Exception\CriticalException;
-use MicroModule\Base\Domain\Exception\EmergencyException;
-use MicroModule\Base\Domain\Exception\ErrorException;
-use MicroModule\Base\Domain\Exception\LoggerException;
-use MicroModule\Base\Domain\Exception\ParentExceptionInterface;
-use MicroModule\Base\Domain\Exception\ParentExceptionTrait;
+use DddModule\Base\Domain\Exception\AlertException;
+use DddModule\Base\Domain\Exception\CriticalException;
+use DddModule\Base\Domain\Exception\EmergencyException;
+use DddModule\Base\Domain\Exception\ErrorException;
+use DddModule\Base\Domain\Exception\LoggerException;
+use DddModule\Base\Domain\Exception\ParentExceptionInterface;
+use DddModule\Base\Domain\Exception\ParentExceptionTrait;
 use Psr\Log\LoggerInterface;
 use Throwable;
 

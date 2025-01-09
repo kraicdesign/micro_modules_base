@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Infrastructure\Service\DataMapper;
+namespace DddModule\Base\Infrastructure\Service\DataMapper;
 
-use MicroModule\Base\Infrastructure\Service\DataMapper\Types\TypeRegistry;
+use DddModule\Base\Infrastructure\Service\DataMapper\Types\TypeRegistry;
 
 abstract class AbstractDataMapper implements DataMapperInterface
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Infrastructure\Service\DataMapper\Types;
+namespace DddModule\Base\Infrastructure\Service\DataMapper\Types;
 
 /**
  * Type that maps an integer value

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\ValueObject;
+namespace DddModule\Base\Domain\ValueObject;
 
 use DateTimeInterface;
-use MicroModule\ValueObject\Identity\UUID as BaseUUID;
+use DddModule\ValueObject\Identity\UUID as BaseUUID;
 use Ramsey\Uuid\Converter\NumberConverterInterface;
 use Ramsey\Uuid\Fields\FieldsInterface;
 use Ramsey\Uuid\Type\Hexadecimal;

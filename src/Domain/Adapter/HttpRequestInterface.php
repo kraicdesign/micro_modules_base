@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\Adapter;
+namespace DddModule\Base\Domain\Adapter;
 
 /**
  * Interface HttpRequestInterface.

@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Infrastructure\Repository;
+namespace DddModule\Base\Infrastructure\Repository;
 
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Exception as DBALException;
 use Doctrine\DBAL\Statement as DriverStatement;
-use MicroModule\Base\Domain\ReadModel\ReadModelInterface;
-use MicroModule\Base\Domain\Repository\ReadModelStoreInterface;
-use MicroModule\Base\Infrastructure\Repository\Exception\DBALEventStoreException;
-use MicroModule\Base\Infrastructure\Repository\Exception\NotFoundException;
-use MicroModule\Base\Infrastructure\Service\DataMapper\DataMapperInterface;
+use DddModule\Base\Domain\ReadModel\ReadModelInterface;
+use DddModule\Base\Domain\Repository\ReadModelStoreInterface;
+use DddModule\Base\Infrastructure\Repository\Exception\DBALEventStoreException;
+use DddModule\Base\Infrastructure\Repository\Exception\NotFoundException;
+use DddModule\Base\Infrastructure\Service\DataMapper\DataMapperInterface;
 
 /**
  * @SuppressWarnings(PHPMD)

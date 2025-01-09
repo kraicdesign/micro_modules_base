@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\Dto;
+namespace DddModule\Base\Domain\Dto;
 
 interface DtoInterface
 {

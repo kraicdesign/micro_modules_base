@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\Entity;
+namespace DddModule\Base\Domain\Entity;
 
 use Broadway\Domain\AggregateRoot;
-use MicroModule\Base\Domain\ValueObject\ProcessUuid;
-use MicroModule\Base\Domain\ValueObject\Uuid;
+use DddModule\Base\Domain\ValueObject\ProcessUuid;
+use DddModule\Base\Domain\ValueObject\Uuid;
 use MicroModule\Snapshotting\EventSourcing\AggregateAssemblerInterface;
 
 interface EntityInterface extends AggregateRoot, AggregateAssemblerInterface

@@ -1,4 +1,4 @@
-FROM php:8.0-cli-alpine
+FROM php:8.2-cli-alpine
 
 RUN apk update
 RUN apk add --no-cache bash
@@ -9,11 +9,22 @@ RUN apk add --no-cache automake
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_MEMORY_LIMIT -1
 
+# prepare
+RUN apk add --update linux-headers
+
 # php extensions
 # intl
 RUN apk add --no-cache icu-dev
 RUN docker-php-ext-install intl
 RUN docker-php-ext-enable intl
+
+# sockets
+RUN apk add --virtual build-dependencies --no-cache
+RUN docker-php-ext-install sockets
+
+# bcmath
+RUN docker-php-ext-install bcmath
+RUN docker-php-ext-enable bcmath
 
 # xdebug
 RUN pecl install xdebug

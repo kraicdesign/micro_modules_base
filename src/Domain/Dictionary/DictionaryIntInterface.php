@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\Dictionary;
+namespace DddModule\Base\Domain\Dictionary;
 
 interface DictionaryIntInterface extends DictionaryInterface
 {

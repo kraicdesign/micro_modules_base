@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Infrastructure\Service\DataMapper\Types;
+namespace DddModule\Base\Infrastructure\Service\DataMapper\Types;
 
-use MicroModule\Base\Infrastructure\Service\DataMapper\Exception\SourceValueIsInvalidException;
+use DddModule\Base\Infrastructure\Service\DataMapper\Exception\SourceValueIsInvalidException;
 
 /**
  * Type that maps an array value

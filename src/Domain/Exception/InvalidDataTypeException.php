@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\Exception;
+namespace DddModule\Base\Domain\Exception;
 
 /**
  * Class InvalidDataTypeException.

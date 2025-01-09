@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Application\Tracing;
+namespace DddModule\Base\Application\Tracing;
 
 interface TraceableInterface
 {

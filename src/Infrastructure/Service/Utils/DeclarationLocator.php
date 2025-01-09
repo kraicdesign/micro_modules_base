@@ -9,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace MicroModule\Base\Infrastructure\Service\Utils;
+namespace DddModule\Base\Infrastructure\Service\Utils;
 
 use Generator;
 use ReflectionClass;

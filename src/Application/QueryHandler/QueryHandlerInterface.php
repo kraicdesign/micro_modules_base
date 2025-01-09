@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Application\QueryHandler;
+namespace DddModule\Base\Application\QueryHandler;
 
-use MicroModule\Base\Domain\Query\QueryInterface;
+use DddModule\Base\Domain\Query\QueryInterface;
 
 interface QueryHandlerInterface
 {

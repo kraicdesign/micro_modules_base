@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\Factory;
+namespace DddModule\Base\Domain\Factory;
 
-use MicroModule\Base\Domain\Command\CommandInterface;
-use MicroModule\Base\Domain\Dto\DtoInterface;
-use MicroModule\Base\Domain\Exception\CommandFactoryNotFoundException;
+use DddModule\Base\Domain\Command\CommandInterface;
+use DddModule\Base\Domain\Dto\DtoInterface;
+use DddModule\Base\Domain\Exception\CommandFactoryNotFoundException;
 
 class CommonCommandFactory implements CommandFactoryInterface
 {

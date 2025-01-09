@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\Factory;
+namespace DddModule\Base\Domain\Factory;
 
-use MicroModule\Base\Domain\Dto\DtoInterface;
-use MicroModule\Base\Domain\Query\QueryInterface as BaseQueryInterface;
+use DddModule\Base\Domain\Dto\DtoInterface;
+use DddModule\Base\Domain\Query\QueryInterface as BaseQueryInterface;
 
 interface QueryFactoryInterface
 {

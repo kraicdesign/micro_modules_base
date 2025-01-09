@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\Exception;
+namespace DddModule\Base\Domain\Exception;
 
-use MicroModule\Base\Domain\Exception\CriticalException;
+use DddModule\Base\Domain\Exception\CriticalException;
 
 class MessageWasNotSentToQueueException extends CriticalException
 {

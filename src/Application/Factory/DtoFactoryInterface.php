@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Application\Factory;
+namespace DddModule\Base\Application\Factory;
 
-use MicroModule\Base\Domain\Dto\DtoInterface;
+use DddModule\Base\Domain\Dto\DtoInterface;
 
 interface DtoFactoryInterface
 {

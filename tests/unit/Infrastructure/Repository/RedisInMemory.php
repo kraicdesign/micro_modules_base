@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Tests\Unit\Infrastructure\Repository;
+namespace DddModule\Base\Tests\Unit\Infrastructure\Repository;
 
 use Redis;
 

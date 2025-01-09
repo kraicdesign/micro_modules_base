@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\Event;
+namespace DddModule\Base\Domain\Event;
 
 use Assert\Assertion;
-use MicroModule\Base\Domain\ValueObject\Payload;
-use MicroModule\Base\Domain\ValueObject\ProcessUuid;
-use MicroModule\Base\Domain\ValueObject\Uuid;
+use DddModule\Base\Domain\ValueObject\Payload;
+use DddModule\Base\Domain\ValueObject\ProcessUuid;
+use DddModule\Base\Domain\ValueObject\Uuid;
 use RuntimeException;
 
 /**

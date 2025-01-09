@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\Repository;
+namespace DddModule\Base\Domain\Repository;
 
-use MicroModule\Base\Domain\ValueObject\FindCriteria;
-use MicroModule\Base\Domain\ValueObject\Uuid;
+use DddModule\Base\Domain\ValueObject\FindCriteria;
+use DddModule\Base\Domain\ValueObject\Uuid;
 
 interface QueryLiteRepositoryInterface
 {

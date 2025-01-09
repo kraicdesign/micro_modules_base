@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Application\Service;
+namespace DddModule\Base\Application\Service;
 
 use Yoanm\JsonRpcServer\Domain\JsonRpcMethodInterface;
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\Service;
+namespace DddModule\Base\Domain\Service;
 
 /**
  * Contract for objects serializable by the SerializableDto.

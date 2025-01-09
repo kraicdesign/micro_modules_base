@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Tests\Unit\Infrastructure\Factory;
+namespace DddModule\Base\Tests\Unit\Infrastructure\Factory;
 
 use Mockery;
 use Mockery\MockInterface;

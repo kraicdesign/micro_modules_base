@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Infrastructure\Service\DataMapper\Exception;
+namespace DddModule\Base\Infrastructure\Service\DataMapper\Exception;
 
 use RuntimeException;
 
@@ -16,6 +16,6 @@ class TypeNotExistsException extends RuntimeException
      */
     public static function fromTypeClass(string $type): self
     {
-        return new self(sprintf("Type "%s" does not exists", $type));
+        return new self(sprintf('Type "%s" does not exists', $type));
     }
 }

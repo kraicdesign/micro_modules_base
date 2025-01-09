@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\ValueObject;
+namespace DddModule\Base\Domain\ValueObject;
 
-use MicroModule\ValueObject\Structure\Dictionary;
+use DddModule\ValueObject\Structure\Dictionary;
 
 class Payload extends Dictionary
 {

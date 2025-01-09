@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Infrastructure\Repository;
+namespace DddModule\Base\Infrastructure\Repository;
 
 interface TaskRepositoryInterface
 {

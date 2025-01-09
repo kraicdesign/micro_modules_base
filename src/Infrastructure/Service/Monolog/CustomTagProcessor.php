@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Infrastructure\Service\Monolog;
+namespace DddModule\Base\Infrastructure\Service\Monolog;
 
 use Error;
-use MicroModule\Base\Domain\Exception\AlertException;
-use MicroModule\Base\Domain\Exception\CriticalException;
-use MicroModule\Base\Domain\Exception\EmergencyException;
+use DddModule\Base\Domain\Exception\AlertException;
+use DddModule\Base\Domain\Exception\CriticalException;
+use DddModule\Base\Domain\Exception\EmergencyException;
 use Monolog\Processor\ProcessorInterface;
 use RuntimeException;
 use Symfony\Component\ErrorHandler\Exception\SilencedErrorContext;

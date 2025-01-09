@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\Query;
+namespace DddModule\Base\Domain\Query;
 
-use MicroModule\Base\Domain\ValueObject\ProcessUuid;
+use DddModule\Base\Domain\ValueObject\ProcessUuid;
 
 interface QueryInterface
 {

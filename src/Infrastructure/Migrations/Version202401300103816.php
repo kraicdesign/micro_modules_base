@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Infrastructure\Migrations;
+namespace DddModule\Base\Infrastructure\Migrations;
 
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\Migrations\AbstractMigration;
@@ -33,7 +33,7 @@ class Version202401300103816 extends AbstractMigration implements ContainerAware
 
         $this->em->flush();
 
-        $this->addSql("            
+        $this->addSql('
             CREATE TABLE enqueue_job
             (
               id          int           not null,
@@ -49,13 +49,13 @@ class Version202401300103816 extends AbstractMigration implements ContainerAware
               data        json          default null,
               PRIMARY KEY (id)
             );
-        ");
+        ');
 
-        $this->addSql("CREATE INDEX IDX_C206D624295AA268 ON enqueue_job (root_job_id);");
-        $this->addSql("COMMENT ON COLUMN enqueue_job.data IS \"(DC2Type:json)\";");
-        $this->addSql("ALTER TABLE enqueue_job
+        $this->addSql('CREATE INDEX IDX_C206D624295AA268 ON enqueue_job (root_job_id);');
+        $this->addSql('COMMENT ON COLUMN enqueue_job.data IS "(DC2Type:json)";');
+        $this->addSql('ALTER TABLE enqueue_job
               ADD CONSTRAINT FK_C206D624295AA268 FOREIGN KEY (root_job_id) REFERENCES enqueue_job (id) ON DELETE CASCADE NOT DEFERRABLE INITIALLY IMMEDIATE;
-        ");
+        ');
     }
 
     public function down(Schema $schema): void

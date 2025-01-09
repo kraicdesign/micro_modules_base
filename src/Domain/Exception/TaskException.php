@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\Exception;
+namespace DddModule\Base\Domain\Exception;
 
-use MicroModule\Base\Domain\Exception\ErrorException;
+use DddModule\Base\Domain\Exception\ErrorException;
 
 class TaskException extends ErrorException
 {

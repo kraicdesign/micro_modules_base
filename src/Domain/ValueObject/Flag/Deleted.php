@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\ValueObject\Flag;
+namespace DddModule\Base\Domain\ValueObject\Flag;
 
-use MicroModule\ValueObject\Logical\Boolean;
+use DddModule\ValueObject\Logical\Boolean;
 
 class Deleted extends Boolean
 {

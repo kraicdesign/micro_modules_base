@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\ReadModel;
+namespace DddModule\Base\Domain\ReadModel;
 
 use JsonSerializable;
 

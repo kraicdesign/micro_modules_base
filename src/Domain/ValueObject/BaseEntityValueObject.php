@@ -1,11 +1,11 @@
 <?php
 
-namespace MicroModule\Base\Domain\ValueObject;
+namespace DddModule\Base\Domain\ValueObject;
 
 use Broadway\Serializer\Serializable;
-use MicroModule\Base\Domain\Exception\ValueObjectInvalidException;
-use MicroModule\Base\Domain\Exception\ValueObjectInvalidNativeValueException;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\Base\Domain\Exception\ValueObjectInvalidException;
+use DddModule\Base\Domain\Exception\ValueObjectInvalidNativeValueException;
+use DddModule\ValueObject\ValueObjectInterface;
 
 abstract class BaseEntityValueObject implements  Serializable, ValueObjectInterface
 {

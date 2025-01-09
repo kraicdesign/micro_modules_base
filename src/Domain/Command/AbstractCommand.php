@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\Command;
+namespace DddModule\Base\Domain\Command;
 
-use MicroModule\Base\Domain\ValueObject\Payload;
-use MicroModule\Base\Domain\ValueObject\ProcessUuid;
+use DddModule\Base\Domain\ValueObject\Payload;
+use DddModule\Base\Domain\ValueObject\ProcessUuid;
 use Ramsey\Uuid\UuidInterface;
 
 /**

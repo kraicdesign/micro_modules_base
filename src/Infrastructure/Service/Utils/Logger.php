@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Infrastructure\Service\Utils;
+namespace DddModule\Base\Infrastructure\Service\Utils;
 
 use Psr\Log\LoggerInterface;
 use Psr\Log\LoggerTrait;

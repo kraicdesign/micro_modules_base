@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Infrastructure\Repository;
+namespace DddModule\Base\Infrastructure\Repository;
 
-use MicroModule\Base\Utils\LoggerTrait;
-use MicroModule\Base\Domain\Repository\QueryLiteRepositoryInterface;
-use MicroModule\Base\Domain\Repository\ReadModelStoreInterface;
-use MicroModule\Base\Domain\ValueObject\FindCriteria;
-use MicroModule\Base\Domain\ValueObject\Uuid;
-use MicroModule\Base\Infrastructure\Repository\Exception\NotFoundException;
+use DddModule\Base\Utils\LoggerTrait;
+use DddModule\Base\Domain\Repository\QueryLiteRepositoryInterface;
+use DddModule\Base\Domain\Repository\ReadModelStoreInterface;
+use DddModule\Base\Domain\ValueObject\FindCriteria;
+use DddModule\Base\Domain\ValueObject\Uuid;
+use DddModule\Base\Infrastructure\Repository\Exception\NotFoundException;
 
 class QueryLiteRepository implements QueryLiteRepositoryInterface
 {

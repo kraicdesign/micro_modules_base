@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\ValueObject;
+namespace DddModule\Base\Domain\ValueObject;
 
-use MicroModule\ValueObject\Number\Integer as BaseInteger;
+use DddModule\ValueObject\Number\Integer as BaseInteger;
 
 class Id extends BaseInteger
 {

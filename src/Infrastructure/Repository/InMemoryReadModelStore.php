@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Infrastructure\Repository;
+namespace DddModule\Base\Infrastructure\Repository;
 
-use MicroModule\Base\Domain\ReadModel\ReadModelInterface;
-use MicroModule\Base\Domain\Repository\ReadModelStoreInterface;
-use MicroModule\Base\Infrastructure\Repository\Exception\NotFoundException;
+use DddModule\Base\Domain\ReadModel\ReadModelInterface;
+use DddModule\Base\Domain\Repository\ReadModelStoreInterface;
+use DddModule\Base\Infrastructure\Repository\Exception\NotFoundException;
 use UnexpectedValueException;
 
 /**

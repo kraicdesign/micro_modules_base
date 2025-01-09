@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Application\Processor;
+namespace DddModule\Base\Application\Processor;
 
 use MicroModule\Task\Application\Processor\JobCommandBusProcessor;
 

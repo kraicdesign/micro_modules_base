@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\Repository;
+namespace DddModule\Base\Domain\Repository;
 
-use MicroModule\Base\Domain\ReadModel\ReadModelInterface;
+use DddModule\Base\Domain\ReadModel\ReadModelInterface;
 use UnexpectedValueException;
 
 interface ReadModelStoreInterface

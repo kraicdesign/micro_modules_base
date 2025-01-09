@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Presentation\Rpc;
+namespace DddModule\Base\Presentation\Rpc;
 
 use League\Tactician\CommandBus;
-use MicroModule\Base\Domain\Dto\DtoInterface;
+use DddModule\Base\Domain\Dto\DtoInterface;
 use Symfony\Component\Validator\Constraint;
 use Yoanm\JsonRpcParamsSymfonyValidator\Domain\MethodWithValidatedParamsInterface;
 use Yoanm\JsonRpcServer\Domain\JsonRpcMethodInterface;

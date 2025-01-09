@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\Entity;
+namespace DddModule\Base\Domain\Entity;
 
 /**
  * Contract for objects serializable.

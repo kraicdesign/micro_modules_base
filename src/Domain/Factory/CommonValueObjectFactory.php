@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Domain\Factory;
+namespace DddModule\Base\Domain\Factory;
 
-use MicroModule\Base\Domain\ValueObject\CreatedAt;
-use MicroModule\Base\Domain\ValueObject\FindCriteria;
-use MicroModule\Base\Domain\ValueObject\Flag\Deleted;
-use MicroModule\Base\Domain\ValueObject\Id;
-use MicroModule\Base\Domain\ValueObject\NullValue;
-use MicroModule\Base\Domain\ValueObject\Payload;
-use MicroModule\Base\Domain\ValueObject\ProcessUuid;
-use MicroModule\Base\Domain\ValueObject\Translation\Language;
-use MicroModule\Base\Domain\ValueObject\UpdatedAt;
-use MicroModule\Base\Domain\ValueObject\Uuid;
+use DddModule\Base\Domain\ValueObject\CreatedAt;
+use DddModule\Base\Domain\ValueObject\FindCriteria;
+use DddModule\Base\Domain\ValueObject\Flag\Deleted;
+use DddModule\Base\Domain\ValueObject\Id;
+use DddModule\Base\Domain\ValueObject\NullValue;
+use DddModule\Base\Domain\ValueObject\Payload;
+use DddModule\Base\Domain\ValueObject\ProcessUuid;
+use DddModule\Base\Domain\ValueObject\Translation\Language;
+use DddModule\Base\Domain\ValueObject\UpdatedAt;
+use DddModule\Base\Domain\ValueObject\Uuid;
 
 class CommonValueObjectFactory implements CommonValueObjectFactoryInterface
 {

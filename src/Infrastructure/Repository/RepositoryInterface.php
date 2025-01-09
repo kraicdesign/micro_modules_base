@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Infrastructure\Repository;
+namespace DddModule\Base\Infrastructure\Repository;
 
-use MicroModule\Base\Domain\Entity\EntityInterface;
-use MicroModule\Base\Domain\ValueObject\Uuid;
+use DddModule\Base\Domain\Entity\EntityInterface;
+use DddModule\Base\Domain\ValueObject\Uuid;
 
 interface RepositoryInterface
 {

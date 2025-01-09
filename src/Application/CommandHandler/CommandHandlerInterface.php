@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\Base\Application\CommandHandler;
+namespace DddModule\Base\Application\CommandHandler;
 
-use MicroModule\Base\Domain\Command\CommandInterface;
+use DddModule\Base\Domain\Command\CommandInterface;
 
 interface CommandHandlerInterface
 {

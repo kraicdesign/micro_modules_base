@@ -7,7 +7,7 @@ namespace DddModule\Base\Domain\Entity;
 use Broadway\Domain\AggregateRoot;
 use DddModule\Base\Domain\ValueObject\ProcessUuid;
 use DddModule\Base\Domain\ValueObject\Uuid;
-use MicroModule\Snapshotting\EventSourcing\AggregateAssemblerInterface;
+use DddModule\Snapshotting\EventSourcing\AggregateAssemblerInterface;
 
 interface EntityInterface extends AggregateRoot, AggregateAssemblerInterface
 {

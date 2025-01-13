@@ -1,4 +1,6 @@
-FROM php:8.2-cli-alpine
+ARG PHP_VER=8.3
+
+FROM php:${PHP_VER}-cli-alpine
 
 RUN apk update
 RUN apk add --no-cache bash

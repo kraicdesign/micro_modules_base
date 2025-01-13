@@ -5,6 +5,8 @@ services:
     container_name: ${MICROBASE_COMPOSE_PROJECT_NAME}_php
     build:
       context: .docker/php-dev
+    environment:
+      - PHP_VER=${PHP_VER}
     env_file:
       - .env
     volumes:

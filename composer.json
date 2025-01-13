@@ -9,9 +9,9 @@
         "ext-json": "*",
         "beberlei/assert": "^3.3",
         "ddd-module/snapshotting": "^1.0",
-        "monolog/monolog": "~1.22 || ~2.0",
         "psr/log": "^1.1 || ^2.0 || ^3.0",
-        "ramsey/uuid": "^3.8 || ^4.0"
+        "ramsey/uuid": "^3.8 || ^4.0",
+        "monolog/monolog": "~1.22 || ~2.0"
     },
     "suggest": {
         "broadway/broadway": "^2.5",

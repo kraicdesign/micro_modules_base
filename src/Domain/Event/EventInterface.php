@@ -9,8 +9,8 @@ use Broadway\Serializer\Serializable;
 use DddModule\Base\Domain\ValueObject\Payload;
 use DddModule\Base\Domain\ValueObject\ProcessUuid;
 
-if (class_exists('\MicroModule\EventQueue\Domain\EventHandling\EventInterface')) {
-    interface MiddleEventInterface extends Serializable, \MicroModule\EventQueue\Domain\EventHandling\EventInterface {}
+if (class_exists('\DddModule\EventQueue\Domain\EventHandling\EventInterface')) {
+    interface MiddleEventInterface extends Serializable, \DddModule\EventQueue\Domain\EventHandling\EventInterface {}
 } else {
     interface MiddleEventInterface extends Serializable {}
 }

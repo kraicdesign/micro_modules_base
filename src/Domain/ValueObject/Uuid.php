@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace DddModule\Base\Domain\ValueObject;
 
 use DateTimeInterface;
+use DddModule\Base\Domain\Exception\InvalidDataException;
 use DddModule\ValueObject\Identity\UUID as BaseUUID;
+use Exception;
 use Ramsey\Uuid\Converter\NumberConverterInterface;
 use Ramsey\Uuid\Fields\FieldsInterface;
 use Ramsey\Uuid\Type\Hexadecimal;
@@ -110,6 +112,7 @@ class Uuid extends BaseUUID implements UuidInterface
      * String representation of object.
      * @link https://php.net/manual/en/serializable.serialize.php
      * @return string|null The string representation of the object or null
+     * @throws Exception
      */
     public function serialize(): string
     {
@@ -119,11 +122,11 @@ class Uuid extends BaseUUID implements UuidInterface
     /**
      * Constructs the object.
      * @link https://php.net/manual/en/serializable.unserialize.php
-     * @param string $serialized The string representation of the object.
+     * @param string $data The string representation of the object.
      */
-    public function unserialize($serialized): void
+    public function unserialize(string $data): void
     {
-        $this->uuid->unserialize($serialized);
+        $this->uuid->unserialize($data);
     }
 
     public function jsonSerialize(): mixed
@@ -296,5 +299,26 @@ class Uuid extends BaseUUID implements UuidInterface
     public function getVersion(): ?int
     {
         return $this->uuid->getVersion();
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function __serialize(): array
+    {
+        return ['uuid' => $this->serialize()];
+    }
+
+    /**
+     * @throws InvalidDataException()
+     * @throws Exception
+     */
+    public function __unserialize(array $data): void
+    {
+        if (!array_key_exists('uuid', $data)) {
+            throw new InvalidDataException('Serialized Uuid data should contain field "uuid"');
+        }
+
+        $this->unserialize($data['uuid']);
     }
 }
